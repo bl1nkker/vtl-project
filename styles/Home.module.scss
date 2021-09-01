@@ -1,0 +1,48 @@
+@import "utils/config";
+@import "utils/mixins";
+
+@media only screen and (max-width: 768px) {
+  .main {
+    @include flex-box(column, space-between, left);
+    .content__header {
+      margin: 1rem 0 10rem 0;
+    }
+    .content__products_carousel {
+      padding-left: 0.75rem;
+      h3 {
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      hr {
+        margin: 1.5rem 0;
+      }
+      .products__carousel {
+        @include flex-box(row, space-between, flex-start);
+        .carousel__item {
+          width: 50%;
+          font-weight: 300;
+          font-size: 0.75rem;
+        }
+      }
+      .carousel__actions {
+        margin-right: 0.75rem;
+        margin-top: 1rem;
+        @include flex-box(row, space-between, flex-end);
+        .products__indexes {
+          font-weight: 200;
+          font-size: 1rem;
+          .current__product {
+            font-size: 2.25rem;
+          }
+        }
+        button {
+          padding: 0.15rem 2rem;
+          border: 1px solid white;
+          border-radius: 40px;
+          color: white;
+        }
+      }
+    }
+  }
+}
