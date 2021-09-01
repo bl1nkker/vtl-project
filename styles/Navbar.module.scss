@@ -9,6 +9,12 @@
 @media only screen and (max-width: 768px) {
   .navbar__container {
     @include flex-box(row, space-between, center);
-    padding: 1em;
+    padding: 0 0.5rem;
+    button {
+      svg {
+        color: orange;
+        font-size: 3rem;
+      }
+    }
   }
 }

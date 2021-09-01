@@ -11,6 +11,7 @@ import arrowAction from "./../public/imports/arrow-action.svg";
 import Footer from "../components/footer/Footer";
 import { ICarouselItem } from "../interfaces/interfaces";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+import Suffix from "../components/home/Suffix";
 
 const mainProducts: ICarouselItem[] = [
   {
@@ -64,7 +65,22 @@ const Home: NextPage = () => {
             </button>
           </div>
         </section>
-        <section>Система маркировки шарикоподшипников</section>
+
+        <section className={styles.content__marking_system}>
+          <h2>Система маркировки шарикоподшипников</h2>
+          <h4>Суффиксы</h4>
+          <ul className={styles.suffixes__container}>
+            <Suffix />
+            <Suffix />
+            <Suffix />
+            <Suffix />
+            <Suffix />
+            <Suffix />
+            <Suffix />
+            <Suffix />
+            <Suffix />
+          </ul>
+        </section>
         <section>Префиксы</section>
         <section>Радиальные зазоры</section>
         <section>Классы точности</section>
