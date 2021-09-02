@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import suffixArrowShow from "./../../public/imports/suffix-arrow-show.svg";
 import suffixArrowHide from "./../../public/imports/suffix-arrow-hide.svg";
 import Image from "next/image";
 import styles from "./../../styles/Home.module.scss";
 
-interface Props {}
+interface Props {
+  suffix: any;
+}
 
-const Suffix = (props: Props) => {
+const Suffix: React.FC<Props> = ({ suffix }) => {
   // hide, show
   const [contentMode, setContentMode] = useState<string>("hide");
+
   const handleToggleMode = () => {
     setContentMode((prevState: any) => (prevState == "hide" ? "show" : "hide"));
   };
   return (
     <li>
       <div className={styles.item__header}>
-        <h1>RS / 2RS</h1>
+        {suffix.name.includes("*") ? (
+          <h1>
+            {suffix.name.slice(0, -1)} <span className={styles.starred}>*</span>
+          </h1>
+        ) : (
+          <h1>{suffix.name}</h1>
+        )}
         <button onClick={handleToggleMode}>
           {contentMode == "hide" ? (
             <Image
@@ -34,12 +43,15 @@ const Suffix = (props: Props) => {
           )}
         </button>
       </div>
-      {contentMode == "show" && (
-        <div className={styles.item__content}>
-          Бесконтактное уплотнение из бутадиен -акрилонитрилового каучука (NBR)
-          с одной /обеих сторон подшипника *
-        </div>
-      )}
+      {contentMode == "show" &&
+        (suffix.content.includes("*") ? (
+          <div className={styles.item__content}>
+            {suffix.content.slice(0, -1)}{" "}
+            <span className={styles.starred}>*</span>
+          </div>
+        ) : (
+          <div className={styles.item__content}>{suffix.content}</div>
+        ))}
     </li>
   );
 };

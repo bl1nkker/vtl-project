@@ -83,6 +83,9 @@ $margin-default-value: 5rem;
             font-size: 1.4rem;
             margin: 0;
           }
+          .starred {
+            color: orangered;
+          }
           .item__header {
             @include flex-box(row, space-between, center);
             padding: 0 $padding-left-value;

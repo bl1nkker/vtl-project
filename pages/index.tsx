@@ -26,6 +26,27 @@ const mainProducts: ICarouselItem[] = [
   },
 ];
 
+const markingSystemSuffixes = [
+  {
+    id: 1,
+    name: "RS / 2RS",
+    content:
+      "Бесконтактное уплотнение из бутадиен-акрилонитрилового каучука (NBR) с одной /обеих сторон подшипника",
+  },
+  {
+    id: 1,
+    name: "RS / 2RS *",
+    content:
+      "Бесконтактное уплотнение из бутадиен-акрилонитрилового каучука (NBR) с одной /обеих сторон подшипника *",
+  },
+  {
+    id: 1,
+    name: "RS / 2RS",
+    content:
+      "Бесконтактное уплотнение из бутадиен-акрилонитрилового каучука (NBR) с одной /обеих сторон подшипника",
+  },
+];
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -70,15 +91,9 @@ const Home: NextPage = () => {
           <h2>Система маркировки шарикоподшипников</h2>
           <h4>Суффиксы</h4>
           <ul className={styles.suffixes__container}>
-            <Suffix />
-            <Suffix />
-            <Suffix />
-            <Suffix />
-            <Suffix />
-            <Suffix />
-            <Suffix />
-            <Suffix />
-            <Suffix />
+            {markingSystemSuffixes.map((suffix: any, key: number) => (
+              <Suffix suffix={suffix} key={key} />
+            ))}
           </ul>
         </section>
         <section>Префиксы</section>
