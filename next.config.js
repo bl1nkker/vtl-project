@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.iconscout.com'],
+    domains: ['cdn.iconscout.com', 'encrypted-tbn0.gstatic.com'],
   },
 }

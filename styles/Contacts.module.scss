@@ -1,0 +1,42 @@
+@import "utils/config";
+@import "utils/mixins";
+
+.content__contacts {
+  margin: $margin-default-value 0;
+  border-bottom: 1px white solid;
+  .contacts__header {
+    @include flex-box(row, space-between, flex-start);
+    padding: 0 $padding-left-value;
+    margin-top: $margin-default-value;
+    margin-bottom: $margin-mini-value;
+    .address {
+      width: 9rem;
+      font-size: 10px;
+      font-weight: 300;
+    }
+  }
+
+  .contacts__map {
+    margin-bottom: $margin-mini-value;
+  }
+
+  .contacts__info {
+    padding: 0 $padding-left-value;
+    margin-bottom: $margin-mini-value;
+    .info {
+      @include flex-box(row, space-between, flex-start);
+      margin-top: $margin-mini-value;
+      .title {
+        font-size: 12px;
+        font-weight: 600;
+        color: $color-secondary;
+        text-transform: uppercase;
+      }
+      .content {
+        font-size: 16px;
+        font-weight: 200;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

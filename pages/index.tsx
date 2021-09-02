@@ -12,40 +12,14 @@ import Footer from "../components/footer/Footer";
 import { ICarouselItem } from "../interfaces/interfaces";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import Suffix from "../components/home/Suffix";
-
-const mainProducts: ICarouselItem[] = [
-  {
-    id: 1,
-    content:
-      "Для профессионального применения соответствует требованиям заказчика в отношении долговечности и надежности продукта.",
-  },
-  {
-    id: 2,
-    content:
-      "Подшипники SilverBear изготовлены из высококачественной стали и подвергается контролируемой термообработке.",
-  },
-];
-
-const markingSystemSuffixes = [
-  {
-    id: 1,
-    name: "RS / 2RS",
-    content:
-      "Бесконтактное уплотнение из бутадиен-акрилонитрилового каучука (NBR) с одной /обеих сторон подшипника",
-  },
-  {
-    id: 1,
-    name: "RS / 2RS *",
-    content:
-      "Бесконтактное уплотнение из бутадиен-акрилонитрилового каучука (NBR) с одной /обеих сторон подшипника *",
-  },
-  {
-    id: 1,
-    name: "RS / 2RS",
-    content:
-      "Бесконтактное уплотнение из бутадиен-акрилонитрилового каучука (NBR) с одной /обеих сторон подшипника",
-  },
-];
+import {
+  carouselProductsData,
+  markingSystemData,
+  prefixesData,
+  pierceClassesData,
+  radialData,
+} from "./../temp/tempData";
+import Contacts from "../components/contacts/Contacts";
 
 const Home: NextPage = () => {
   return (
@@ -70,7 +44,7 @@ const Home: NextPage = () => {
           <h3>Основная линейка продуктов</h3>
           <hr />
           <div className={styles.products__carousel}>
-            {mainProducts.map((product: ICarouselItem, key: number) => (
+            {carouselProductsData.map((product: ICarouselItem, key: number) => (
               <div className={styles.carousel__item} key={key}>
                 {product.content}
               </div>
@@ -91,14 +65,39 @@ const Home: NextPage = () => {
           <h2>Система маркировки шарикоподшипников</h2>
           <h4>Суффиксы</h4>
           <ul className={styles.suffixes__container}>
-            {markingSystemSuffixes.map((suffix: any, key: number) => (
+            {markingSystemData.map((suffix: any, key: number) => (
               <Suffix suffix={suffix} key={key} />
             ))}
           </ul>
         </section>
-        <section>Префиксы</section>
-        <section>Радиальные зазоры</section>
-        <section>Классы точности</section>
+
+        <section className={styles.content__additional}>
+          <h2>Префиксы</h2>
+          <ul className={styles.suffixes__container}>
+            {prefixesData.map((prefix: any, key: number) => (
+              <Suffix suffix={prefix} key={key} />
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.content__additional}>
+          <h2>Радиальные зазоры</h2>
+          <ul className={styles.suffixes__container}>
+            {radialData.map((prefix: any, key: number) => (
+              <Suffix suffix={prefix} key={key} />
+            ))}
+          </ul>
+        </section>
+        <section className={styles.content__additional}>
+          <h2>Классы точности</h2>
+          <ul className={styles.suffixes__container}>
+            {pierceClassesData.map((prefix: any, key: number) => (
+              <Suffix suffix={prefix} key={key} />
+            ))}
+          </ul>
+        </section>
+
+        <Contacts />
         <section className={styles.content__footer}>
           <Image src={keepLogo} alt="keep-logo" height={140} width={140} />
           <Image src={keepLogoUp} alt="keep-logo-up" height={140} width={140} />

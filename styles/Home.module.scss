@@ -1,10 +1,6 @@
 @import "utils/config";
 @import "utils/mixins";
 
-$padding-default-value: 1rem;
-$padding-left-value: 0.25rem;
-$margin-default-value: 5rem;
-
 @media only screen and (max-width: 768px) {
   .main {
     @include flex-box(column, space-between, left);
@@ -58,6 +54,7 @@ $margin-default-value: 5rem;
     // Marking System
     .content__marking_system {
       margin-top: $margin-default-value;
+      margin-bottom: $margin-default-value;
       h2 {
         padding-left: $padding-left-value;
         font-size: 1.4rem;
@@ -71,35 +68,56 @@ $margin-default-value: 5rem;
         color: $color-secondary;
         text-transform: uppercase;
       }
-      .suffixes__container {
-        padding: 0;
-        margin: 0;
-        li {
-          list-style: none;
-          border-top: 1px white solid;
-          padding: $padding-default-value $padding-left-value;
-          h1 {
-            font-weight: 100;
-            font-size: 1.4rem;
-            margin: 0;
-          }
-          .starred {
-            color: orangered;
-          }
-          .item__header {
-            @include flex-box(row, space-between, center);
-            padding: 0 $padding-left-value;
-          }
-          .item__content {
-            width: 80%;
-            padding-top: 0.5rem;
-            font-weight: 300;
-            font-size: 0.8rem;
-          }
+    }
+
+    // Additional
+    .content__additional {
+      margin: $margin-default-value 0;
+      h2 {
+        padding-left: $padding-left-value;
+        font-size: 1.6rem;
+        font-weight: 200;
+        color: $color-secondary;
+        text-transform: uppercase;
+      }
+    }
+
+    // Footer
+    .content__footer {
+      @include flex-box(row, space-between, flex-end);
+      padding: 0 $padding-left-value;
+      margin-top: $margin-default-value;
+    }
+
+    // Common (suffixes)
+    .suffixes__container {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+        border-top: 1px white solid;
+        padding: $padding-default-value $padding-left-value;
+        h1 {
+          font-weight: 100;
+          font-size: 1.4rem;
+          margin: 0;
         }
-        &:last-child {
-          border-bottom: 1px white solid;
+        .starred {
+          color: $color-orange;
         }
+        .item__header {
+          @include flex-box(row, space-between, center);
+          padding: 0 $padding-left-value;
+        }
+        .item__content {
+          width: 80%;
+          padding: 0.5rem $padding-left-value;
+          font-weight: 300;
+          font-size: 0.8rem;
+        }
+      }
+      &:last-child {
+        border-bottom: 1px white solid;
       }
     }
   }
