@@ -57,14 +57,14 @@
       margin-bottom: $margin-default-value;
       h2 {
         padding-left: $padding-left-value;
-        font-size: 1.4rem;
-        font-weight: 400;
+        font-weight: $font-weight-headers;
+        font-size: $font-size-headers;
         text-transform: uppercase;
       }
       h4 {
         padding-left: $padding-left-value;
         font-size: 0.85rem;
-        font-weight: 600;
+        font-weight: 00;
         color: $color-secondary;
         text-transform: uppercase;
       }
@@ -105,8 +105,8 @@
         .item__content {
           width: 80%;
           padding: 0.5rem $padding-left-value;
-          font-weight: 300;
-          font-size: 0.8rem;
+          font-weight: $font-weight-paragraphs;
+          font-size: $font-size-paragraphs;
         }
       }
       &:last-child {
