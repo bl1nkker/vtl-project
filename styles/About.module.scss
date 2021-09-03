@@ -1,0 +1,23 @@
+@import "utils/config";
+@import "utils/mixins";
+
+@media only screen and (max-width: 768px) {
+  .main {
+    @include flex-box(column, space-between, left);
+    .content__header {
+      margin-bottom: $margin-mini-value;
+      padding: 0 $padding-left-value;
+      h3 {
+        font-weight: $font-weight-headers;
+        font-size: $font-size-headers;
+        text-transform: uppercase;
+        color: $color-orange;
+      }
+      p {
+        font-weight: $font-weight-paragraphs;
+        font-size: $font-size-paragraphs;
+        color: $color-secondary;
+      }
+    }
+  }
+}
