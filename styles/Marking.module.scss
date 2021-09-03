@@ -1,0 +1,117 @@
+@import "utils/config";
+@import "utils/mixins";
+
+@media only screen and (max-width: 768px) {
+  .main {
+    @include flex-box(column, space-between, left);
+    .content__header {
+      margin: 1rem 0 $margin-default-value 0;
+    }
+    // Carousel
+    .content__products_carousel {
+      margin-top: $margin-default-value;
+      padding-left: $padding-left-value;
+      h3 {
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      hr {
+        width: 100%;
+        height: 1px;
+        background-color: $color-primary;
+        margin: 1.5rem 0;
+        border: none;
+      }
+      .products__carousel {
+        @include flex-box(row, space-between, flex-start);
+        .carousel__item {
+          width: 50%;
+          font-weight: 300;
+          font-size: 0.75rem;
+        }
+      }
+      .carousel__actions {
+        margin-right: 0.75rem;
+        margin-top: 1rem;
+        @include flex-box(row, space-between, flex-end);
+        .products__indexes {
+          font-weight: 200;
+          font-size: 1rem;
+          .current__product {
+            font-size: 2.25rem;
+          }
+        }
+        button {
+          padding: 0.15rem 2rem;
+          border: 1px solid $color-primary;
+          border-radius: 40px;
+          color: $color-primary;
+        }
+      }
+    }
+
+    // Marking System
+    .content__marking_system {
+      margin-top: $margin-default-value;
+      margin-bottom: $margin-default-value;
+      h2 {
+        padding-left: $padding-left-value;
+        font-weight: $font-weight-headers;
+        font-size: $font-size-headers;
+        text-transform: uppercase;
+      }
+      h4 {
+        padding-left: $padding-left-value;
+        font-size: 0.85rem;
+        font-weight: 00;
+        color: $color-secondary;
+        text-transform: uppercase;
+      }
+    }
+
+    // Additional
+    .content__additional {
+      margin: $margin-default-value 0;
+      h2 {
+        padding-left: $padding-left-value;
+        font-size: 1.6rem;
+        font-weight: 200;
+        color: $color-secondary;
+        text-transform: uppercase;
+      }
+    }
+
+    // Common (suffixes)
+    .suffixes__container {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+        border-top: 1px white solid;
+        padding: $padding-default-value 0;
+        h1 {
+          font-weight: 100;
+          font-size: 1.4rem;
+          margin: 0;
+        }
+        .starred {
+          color: $color-orange;
+        }
+        .item__header {
+          @include flex-box(row, space-between, center);
+          padding: 0 $padding-left-value;
+        }
+        .item__content {
+          width: 80%;
+          padding: 0.5rem $padding-left-value;
+          font-weight: $font-weight-paragraphs;
+          font-size: $font-size-paragraphs;
+        }
+      }
+      &:last-child {
+        border-bottom: 1px white solid;
+      }
+    }
+  }
+}

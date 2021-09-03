@@ -5,7 +5,7 @@ import Footer from "./footer/Footer";
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Home</title>
         <meta name="description" content="VTL project app" />
@@ -13,8 +13,7 @@ const Layout: React.FC = ({ children }) => {
       </Head>
       <Navbar />
       <>{children}</>
-      <Footer />
-    </div>
+    </>
   );
 };
 

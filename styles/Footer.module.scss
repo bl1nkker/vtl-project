@@ -1,0 +1,46 @@
+@import "utils/config";
+@import "utils/mixins";
+
+@media only screen and (max-width: 768px) {
+  .home__footer {
+    @include flex-box(row, space-between, center);
+    border-top: 1px solid $color-secondary;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem $padding-left-value;
+    button {
+      color: $color-primary;
+      font-weight: 100;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .product__footer {
+    @include flex-box(row, space-between, center);
+    border-top: 1px solid $color-secondary;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem $padding-left-value;
+    .page__number {
+      font-weight: 100;
+      font-size: 1.4rem;
+    }
+    .product__tabs {
+      @include flex-box(row, space-between, center);
+      width: 60%;
+      button {
+        font-weight: $font-weight-paragraphs;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: $color-secondary;
+        &.active__path {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
