@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./../../styles/Contacts.module.scss";
 import Image from "next/image";
 import vtlLogo from "./../../public/imports/logo-vtl-contacts.svg";
+import contactsMap from "./../../public/imports/contacts-map.svg";
 
 interface Props {}
 
@@ -18,12 +19,7 @@ const Contacts = (props: Props) => {
       </div>
 
       <div className={styles.contacts__map}>
-        <Image
-          alt="map"
-          width={414}
-          height={414}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyj1cToIdo_vfRjKFBwWkFb5a3rCZyRGouUg&usqp=CAU"
-        />
+        <Image alt="map" width={414} height={414} src={contactsMap} />
       </div>
 
       <div className={styles.contacts__info}>

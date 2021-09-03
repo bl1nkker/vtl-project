@@ -1,0 +1,8 @@
+@import "utils/config";
+@import "utils/mixins";
+
+.content__footer {
+  @include flex-box(row, space-between, flex-end);
+  padding: 0 $padding-left-value;
+  margin-top: $margin-default-value;
+}

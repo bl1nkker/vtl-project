@@ -1,0 +1,45 @@
+@import "utils/config";
+@import "utils/mixins";
+
+@media only screen and (max-width: 768px) {
+  .main {
+    @include flex-box(column, space-between, left);
+    .content__products_list {
+      .product__container {
+        overflow: hidden;
+        position: relative;
+        width: 100vw;
+        height: 25rem;
+        border-bottom: 1px white solid;
+        padding: 0 $padding-left-value;
+
+        background-repeat: no-repeat;
+        background-size: 150% 150%;
+        background-position: bottom -20rem left -3rem;
+        h3 {
+          font-weight: 300;
+          font-size: 1.4rem;
+          text-transform: uppercase;
+        }
+        p {
+          width: 90%;
+          font-weight: 400;
+          font-size: 0.8rem;
+          color: $color-secondary;
+        }
+
+        .product__actions {
+          @include flex-box(row, space-between, center);
+          width: 100%;
+          position: absolute;
+          bottom: $padding-default-value;
+          padding-right: $padding-left-value;
+          span {
+            font-weight: 100;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
