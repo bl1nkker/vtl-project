@@ -12,7 +12,7 @@ const Footer = (props: Props) => {
   const router = useRouter();
   console.log(router);
   const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: any
   ) => {
     event.preventDefault();
     router.push(`/${event.target.name}`);

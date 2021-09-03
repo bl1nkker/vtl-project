@@ -9,7 +9,7 @@ const Home = (props: Props) => {
   const router = useRouter();
 
   const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: any
   ) => {
     event.preventDefault();
     console.log(event);
