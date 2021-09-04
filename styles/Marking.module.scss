@@ -1,5 +1,6 @@
 @import "utils/config";
 @import "utils/mixins";
+@import "utils/animations";
 
 @media only screen and (max-width: 768px) {
   .main {
@@ -87,6 +88,7 @@
       padding: 0;
       margin: 0;
       li {
+        position: relative;
         list-style: none;
         border-top: 1px white solid;
         padding: $padding-default-value 0;
@@ -101,12 +103,34 @@
         .item__header {
           @include flex-box(row, space-between, center);
           padding: 0 $padding-left-value;
+          .rotate__arrow {
+            transition: 0.5s ease-in-out;
+            &_hide {
+              transform: rotate(0deg);
+            }
+            &_show {
+              transform: rotate(90deg);
+            }
+          }
         }
         .item__content {
           width: 80%;
-          padding: 0.5rem $padding-left-value;
+
           font-weight: $font-weight-paragraphs;
           font-size: $font-size-paragraphs;
+          padding: 0 $padding-left-value;
+          transition: 0.5s ease-in-out;
+          animation: drop 1s normal forwards ease-in-out;
+
+          // Скрыто
+          height: 0;
+          overflow: hidden;
+
+          // Открыто
+          &_show {
+            height: 75px;
+            padding: 0.5rem $padding-left-value;
+          }
         }
       }
       &:last-child {

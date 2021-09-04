@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import suffixArrowShow from "./../../public/imports/suffix-arrow-show.svg";
 import suffixArrowHide from "./../../public/imports/suffix-arrow-hide.svg";
 import Image from "next/image";
@@ -26,32 +26,48 @@ const Suffix: React.FC<Props> = ({ suffix }) => {
           <h1>{suffix.name}</h1>
         )}
         <button onClick={handleToggleMode}>
-          {contentMode == "hide" ? (
-            <Image
-              src={suffixArrowShow}
-              alt="suffix-arrow-show"
-              width={18}
-              height={18}
-            />
-          ) : (
-            <Image
-              src={suffixArrowHide}
-              alt="suffix-arrow-hide"
-              width={18}
-              height={18}
-            />
-          )}
+          <Image
+            className={
+              styles.rotate__arrow +
+              " " +
+              (contentMode == "hide"
+                ? styles.rotate__arrow_hide
+                : styles.rotate__arrow_show)
+            }
+            src={suffixArrowShow}
+            alt="suffix-arrow-show"
+            width={18}
+            height={18}
+          />
         </button>
       </div>
-      {contentMode == "show" &&
-        (suffix.content.includes("*") ? (
-          <div className={styles.item__content}>
-            {suffix.content.slice(0, -1)}{" "}
-            <span className={styles.starred}>*</span>
-          </div>
-        ) : (
-          <div className={styles.item__content}>{suffix.content}</div>
-        ))}
+
+      {suffix.content.includes("*") ? (
+        <div
+          className={
+            styles.item__content +
+            " " +
+            (contentMode == "show"
+              ? styles.item__content_show
+              : styles.item__content_hide)
+          }
+        >
+          {suffix.content.slice(0, -1)}{" "}
+          <span className={styles.starred}>*</span>
+        </div>
+      ) : (
+        <div
+          className={
+            styles.item__content +
+            " " +
+            (contentMode == "show"
+              ? styles.item__content_show
+              : styles.item__content_hide)
+          }
+        >
+          {suffix.content}
+        </div>
+      )}
     </li>
   );
 };
