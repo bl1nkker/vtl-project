@@ -1,4 +1,5 @@
 @import "utils/mixins";
+@import "utils/config";
 
 .navbar__container {
   @include flex-box(row, space-evenly, center);
@@ -10,7 +11,7 @@
   .navbar__container {
     @include flex-box(row, space-between, center);
     padding: 0 0.5rem;
-    height: 3rem;
+    height: $tools-height;
     button {
       svg {
         color: orange;

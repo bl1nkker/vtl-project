@@ -3,7 +3,7 @@
 
 .content__contacts {
   margin: $margin-default-value 0;
-  border-bottom: 1px white solid;
+  border-bottom: 1px $color-primary solid;
   .contacts__header {
     @include flex-box(row, space-between, flex-start);
     padding: 0 $padding-left-value;
@@ -18,6 +18,9 @@
 
   .contacts__map {
     margin-bottom: $margin-mini-value;
+    iframe {
+      width: 100%;
+    }
   }
 
   .contacts__info {

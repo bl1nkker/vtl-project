@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import styles from "../styles/Marking.module.scss";
 
 import Image from "next/image";

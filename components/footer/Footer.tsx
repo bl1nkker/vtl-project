@@ -10,10 +10,7 @@ interface Props {}
 const Footer = (props: Props) => {
   const [contentMode, setContentMode] = useState<string>("hide");
   const router = useRouter();
-  console.log(router);
-  const handleClick = (
-    event: any
-  ) => {
+  const handleClick = (event: any) => {
     event.preventDefault();
     router.push(`/${event.target.name}`);
   };
