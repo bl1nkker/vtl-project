@@ -5,7 +5,7 @@ import Image from "next/image";
 import suffixArrowShow from "./../public/imports/suffix-arrow-show.svg";
 import suffixArrowHide from "./../public/imports/suffix-arrow-hide.svg";
 
-import { productsList } from "./../temp/tempData";
+import { productsList } from "../data/tempData";
 import Contacts from "../components/bottom/Contacts";
 import KeepRolling from "../components/bottom/KeepRolling";
 import Footer from "../components/footer/Footer";
@@ -37,7 +37,7 @@ const Products = (props: Props) => {
               <h3>{product.name}</h3>
               <p>{product.content}</p>
               <div className={styles.product__actions}>
-                <span>0{key + 1}</span>
+                <span>{key < 9 ? `0${key + 1}` : `${key + 1}`}</span>
                 <button onClick={handleToggleMode}>
                   {contentMode == "hide" ? (
                     <Image

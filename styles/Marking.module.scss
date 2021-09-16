@@ -12,6 +12,7 @@
     .content__products_carousel {
       margin-top: $margin-default-value;
       padding-left: $padding-left-value;
+      overflow: hidden;
       h3 {
         font-size: 14px;
         font-weight: 400;
@@ -25,11 +26,16 @@
         border: none;
       }
       .products__carousel {
-        @include flex-box(row, space-between, flex-start);
+        width: fit-content;
+        transition: 0.3s;
+        @include flex-box(row, flex-start, flex-start);
         .carousel__item {
-          width: 50%;
-          font-weight: 300;
-          font-size: 0.75rem;
+          width: 300px;
+          text-align: left;
+          p {
+            font-weight: 300;
+            font-size: 0.75rem;
+          }
         }
       }
       .carousel__actions {
@@ -44,8 +50,12 @@
           }
         }
         button {
-          padding: 0.15rem 2rem;
+          &.decrement {
+            transform: rotate(180deg);
+          }
+          transition: 0.3s;
           border: 1px solid $color-primary;
+          padding: 0.15rem 2rem;
           border-radius: 40px;
           color: $color-primary;
         }

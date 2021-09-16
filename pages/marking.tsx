@@ -13,11 +13,14 @@ import {
   prefixesData,
   pierceClassesData,
   radialData,
-} from "../temp/tempData";
+} from "../data/tempData";
 import Contacts from "../components/bottom/Contacts";
 import KeepRolling from "../components/bottom/KeepRolling";
+import { MouseEvent, useState } from "react";
 
 const Home: NextPage = () => {
+  const [carouselIncr, setCarouselIncr] = useState<number>(0);
+
   return (
     <>
       <main className={styles.main}>
@@ -33,19 +36,44 @@ const Home: NextPage = () => {
         <section className={styles.content__products_carousel}>
           <h3>Основная линейка продуктов</h3>
           <hr />
-          <div className={styles.products__carousel}>
+          <div
+            className={styles.products__carousel}
+            style={{ transform: `translateX(-${carouselIncr * 300}px)` }}
+          >
             {carouselProductsData.map((product: ICarouselItem, key: number) => (
               <div className={styles.carousel__item} key={key}>
-                {product.content}
+                <p>{product.content}</p>
               </div>
             ))}
           </div>
           <div className={styles.carousel__actions}>
             <div className={styles.products__indexes}>
-              <span className={styles.current__product}>01</span>/06.
+              <span className={styles.current__product}>
+                {carouselIncr < 9 ? `0${carouselIncr + 1}` : carouselIncr + 1}
+              </span>
+              /
+              {carouselProductsData.length < 9
+                ? `0${carouselProductsData.length}`
+                : carouselProductsData.length}
+              .
             </div>
-
-            <button>
+            {/* Decrement */}
+            <button
+              className={styles.decrement}
+              style={{ opacity: carouselIncr > 0 ? 1 : 0 }}
+              disabled={carouselIncr <= 0}
+              onClick={() => setCarouselIncr((prevState) => prevState - 1)}
+            >
+              <ArrowRightAltIcon fontSize="large" />
+            </button>
+            {/* Increment */}
+            <button
+              style={{
+                opacity: carouselIncr < carouselProductsData.length - 1 ? 1 : 0,
+              }}
+              disabled={carouselIncr >= carouselProductsData.length - 1}
+              onClick={() => setCarouselIncr((prevState) => prevState + 1)}
+            >
               <ArrowRightAltIcon fontSize="large" />
             </button>
           </div>

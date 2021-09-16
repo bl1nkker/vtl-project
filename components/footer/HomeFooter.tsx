@@ -11,7 +11,7 @@ const HomeFooter = (props: Props) => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
-    router.push("/about");
+    router.push("https://api.whatsapp.com/send?phone=1234567890");
   };
   return (
     <footer className={styles.home__footer}>
