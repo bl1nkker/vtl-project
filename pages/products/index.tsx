@@ -8,6 +8,7 @@ import { productsList } from "../../data/tempData";
 import Contacts from "../../components/bottom/Contacts";
 import KeepRolling from "../../components/bottom/KeepRolling";
 import router from "next/router";
+import { IProduct } from "../../interfaces/interfaces";
 
 interface Props {}
 
@@ -25,12 +26,12 @@ const Products = (props: Props) => {
             style={{
               backgroundImage: `
             linear-gradient(to right bottom, rgba(0, 0, 0, 0.911) 40%, rgba(71, 71, 71, 0.993) 100%), 
-            url(${product.backgroungImg})
+            url(${product.productImage})
             `,
             }}
           >
             <h3>{product.name}</h3>
-            <p>{product.content}</p>
+            <p>{product.previewText}</p>
             <div className={styles.product__actions}>
               <span>{key < 9 ? `0${key + 1}` : `${key + 1}`}</span>
               <button onClick={() => handleToggleMode(product.id as string)}>

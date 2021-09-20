@@ -1,4 +1,3 @@
-import { GetStaticPaths } from "next";
 import React from "react";
 import KeepRolling from "../../../components/bottom/KeepRolling";
 import Footer from "../../../components/footer/Footer";
@@ -27,7 +26,7 @@ const ProductDescription = ({ product }: Props) => {
         <section className={styles.content__illustration}>
           {/* Change this later */}
           <Image
-            src={bearingFirstImg}
+            src={product.productImage}
             alt="bearing-1"
             width={414}
             height={414}
@@ -43,12 +42,15 @@ const ProductDescription = ({ product }: Props) => {
         </section>
         <section className={styles.content__illustration}>
           {/* Change this later */}
-          <Image
-            src={bearingSecondImg}
-            alt="bearing-1"
-            width={414}
-            height={414}
-          />
+          {product.productBlueprintImages.map((image) => (
+            <Image
+              key={image.id}
+              src={image.imagePath}
+              alt="bearing-1"
+              width={414}
+              height={414}
+            />
+          ))}
         </section>
 
         <section className={styles.content__paragraphs}>
@@ -76,7 +78,7 @@ const ProductDescription = ({ product }: Props) => {
         <KeepRolling />
       </main>
 
-      <Footer />
+      <Footer productNumber={product.productNumber} />
     </>
   );
 };

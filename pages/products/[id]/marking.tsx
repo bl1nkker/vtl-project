@@ -78,7 +78,7 @@ const ProductMarking = ({ product }: Props) => {
         <Contacts />
         <KeepRolling />
       </main>
-      <Footer />
+      <Footer productNumber={product.productNumber} />
     </>
   );
 };

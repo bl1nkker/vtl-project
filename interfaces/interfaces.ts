@@ -7,14 +7,19 @@ export interface IProduct{
     id: string,
       name: string,
       content: string,
-      backgroungImg: string,
+      productImage: string,
       previewText: string,
+      productNumber: number,
 
       productInfoAboveBearing: string,
       productInfoAboveBluePrint: string,
       productInfoAboveBearIcon: string,
       productInfoUnderBearIcon: string,
-
+      productBlueprintTitle: string,
+      productBlueprintImages:[{
+        id: number,
+        imagePath: string
+      }]
       marking?:{
         suffixes?:[{
             id: number,

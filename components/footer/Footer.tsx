@@ -5,9 +5,11 @@ import suffixArrowHide from "./../../public/imports/suffix-arrow-hide.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-interface Props {}
+interface Props {
+  productNumber: number;
+}
 
-const Footer = (props: Props) => {
+const Footer = ({ productNumber }: Props) => {
   const [contentMode, setContentMode] = useState<string>("hide");
   const router = useRouter();
   const handleClick = (event: any) => {
@@ -22,7 +24,9 @@ const Footer = (props: Props) => {
   return (
     <footer className={styles.product__footer}>
       <section className={styles.page__number}>
-        <span>01</span>
+        <span>
+          {productNumber < 10 ? `0${productNumber}` : `${productNumber}`}
+        </span>
       </section>
       <section className={styles.product__tabs}>
         <button
