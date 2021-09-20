@@ -4,14 +4,9 @@ import Layout from "../components/Layout";
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [productId, setProductId] = useState<string | null>(null);
   return (
     <Layout>
-      <Component
-        {...pageProps}
-        setProductId={setProductId}
-        productId={productId}
-      />
+      <Component {...pageProps} />
     </Layout>
   );
 }
