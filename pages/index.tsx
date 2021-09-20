@@ -8,18 +8,15 @@ interface Props {}
 const Home = (props: Props) => {
   const router = useRouter();
 
-  const handleClick = (
-    event: any
-  ) => {
+  const handleClick = (event: any) => {
     event.preventDefault();
-    console.log(event);
     router.push(`/${event.target.name}`);
   };
   return (
     <>
       <main className={styles.main}>
         <section className={styles.content__buttons}>
-          <button name="marking" onClick={(event) => handleClick(event)}>
+          <button name="products" onClick={(event) => handleClick(event)}>
             Продукты
           </button>
           <button name="marking" onClick={(event) => handleClick(event)}>

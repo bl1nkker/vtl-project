@@ -6,6 +6,7 @@ import fifteenYearImg from "./../public/imports/15-years.svg";
 interface Props {}
 
 const About = (props: Props) => {
+  console.log(props);
   return (
     <main className={styles.main}>
       <section className={styles.content__header}>

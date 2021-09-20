@@ -5,7 +5,11 @@ import Image from "next/image";
 import styles from "./../../styles/Marking.module.scss";
 
 interface Props {
-  suffix: any;
+  suffix: {
+    id: number;
+    name: string;
+    description: string;
+  };
 }
 
 const Suffix: React.FC<Props> = ({ suffix }) => {
@@ -42,7 +46,7 @@ const Suffix: React.FC<Props> = ({ suffix }) => {
         </button>
       </div>
 
-      {suffix.content.includes("*") ? (
+      {suffix.description.includes("*") ? (
         <div
           className={
             styles.item__content +
@@ -52,7 +56,7 @@ const Suffix: React.FC<Props> = ({ suffix }) => {
               : styles.item__content_hide)
           }
         >
-          {suffix.content.slice(0, -1)}{" "}
+          {suffix.description.slice(0, -1)}{" "}
           <span className={styles.starred}>*</span>
         </div>
       ) : (
@@ -65,7 +69,7 @@ const Suffix: React.FC<Props> = ({ suffix }) => {
               : styles.item__content_hide)
           }
         >
-          {suffix.content}
+          {suffix.description}
         </div>
       )}
     </li>

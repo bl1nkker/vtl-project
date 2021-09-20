@@ -12,7 +12,8 @@ const Footer = (props: Props) => {
   const router = useRouter();
   const handleClick = (event: any) => {
     event.preventDefault();
-    router.push(`/${event.target.name}`);
+    const productId = router.query.id;
+    router.push(`/products/${productId}/${event.target.name}`);
   };
 
   const handleToggleMode = () => {
@@ -26,16 +27,20 @@ const Footer = (props: Props) => {
       <section className={styles.product__tabs}>
         <button
           className={
-            router.pathname === "/products" ? styles.active__path : undefined
+            router.pathname.split("/")[3] === "description"
+              ? styles.active__path
+              : undefined
           }
-          name="products"
+          name="description"
           onClick={(event) => handleClick(event)}
         >
           Описание
         </button>
         <button
           className={
-            router.pathname === "/marking" ? styles.active__path : undefined
+            router.pathname.split("/")[3] === "marking"
+              ? styles.active__path
+              : undefined
           }
           name="marking"
           onClick={(event) => handleClick(event)}
