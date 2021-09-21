@@ -25,7 +25,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      {/* <main className={styles.main}>
+      <main className={styles.main}>
         <section className={styles.content__header}>
           <Image
             src={silverBearLogo}
@@ -58,18 +58,18 @@ const Home: NextPage = () => {
                 ? `0${carouselProductsData.length}`
                 : carouselProductsData.length}
               .
-            </div> */}
-      {/* Decrement */}
-      {/* <button
+            </div>
+            {/* Decrement */}
+            <button
               className={styles.decrement}
               style={{ opacity: carouselIncr > 0 ? 1 : 0 }}
               disabled={carouselIncr <= 0}
               onClick={() => setCarouselIncr((prevState) => prevState - 1)}
             >
               <ArrowRightAltIcon fontSize="large" />
-            </button> */}
-      {/* Increment */}
-      {/* <button
+            </button>
+            {/* Increment */}
+            <button
               style={{
                 opacity: carouselIncr < carouselProductsData.length - 1 ? 1 : 0,
               }}
@@ -118,9 +118,9 @@ const Home: NextPage = () => {
         </section>
 
         <Contacts />
-        <KeepRolling /> */}
-      {/* <Footer /> */}
-      {/* </main> */}
+        <KeepRolling />
+        {/* <Footer /> */}
+      </main>
     </>
   );
 };
