@@ -1,3 +1,5 @@
+// Deprecated
+
 import React from "react";
 import KeepRolling from "../components/bottom/KeepRolling";
 import styles from "./../styles/ProductPage.module.scss";
@@ -116,7 +118,7 @@ const ProductPage = (props: Props) => {
         <KeepRolling />
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
