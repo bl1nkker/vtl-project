@@ -20,6 +20,7 @@ const Footer = ({ productNumber }: Props) => {
 
   const handleToggleMode = () => {
     setContentMode((prevState: any) => (prevState == "hide" ? "show" : "hide"));
+    router.push(`/products`);
   };
   return (
     <footer className={styles.product__footer}>

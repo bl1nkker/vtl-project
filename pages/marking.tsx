@@ -1,3 +1,5 @@
+//  Deprecated
+
 import { NextPage } from "next";
 import styles from "../styles/Marking.module.scss";
 
@@ -117,7 +119,7 @@ const Home: NextPage = () => {
 
         <Contacts />
         <KeepRolling />
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </>
   );

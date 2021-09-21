@@ -61,6 +61,18 @@ const ProductMarking = ({ product }: Props) => {
             </ul>
           </section>
         )}
+        {product.marking?.axialClearances && (
+          <section className={styles.content__additional}>
+            <h2>Осевые зазоры</h2>
+            <ul className={styles.suffixes__container}>
+              {product.marking?.axialClearances?.map(
+                (prefix: any, key: number) => (
+                  <Suffix suffix={prefix} key={key} />
+                )
+              )}
+            </ul>
+          </section>
+        )}
 
         {product.marking?.accuracyClasses && (
           <section className={styles.content__additional}>

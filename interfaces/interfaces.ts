@@ -36,6 +36,13 @@ export interface IProduct{
             name: string,
             description: string
           }],
+          
+          axialClearances?:[{
+            id: number,
+            name: string,
+            description: string
+          }],
+          
           accuracyClasses?:[{
             id: number,
             name: string,
