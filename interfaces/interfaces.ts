@@ -31,6 +31,11 @@ export interface IProduct{
             name: string,
             description: string
           }],
+          indexes?:[{
+            id: number,
+            name: string,
+            description: string
+          }],
           radialClearances?:[{
             id: number,
             name: string,
@@ -49,5 +54,24 @@ export interface IProduct{
             description: string
           }],
 
-        }    
+        }
+        // Additional
+        // 10
+        selfAligningGroups:[{
+          id: number,
+          name: string,
+          description: string
+        }],  
+        // 11 
+        waysFasteningShaft:[{
+          id: number,
+          name: string,
+          description: string
+        }] ,  
+        // 12 
+        shaftPinPairs:[{
+          id: number,
+          name: string,
+          description: string
+        }]    
 }

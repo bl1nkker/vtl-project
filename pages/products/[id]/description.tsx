@@ -4,12 +4,10 @@ import Footer from "../../../components/footer/Footer";
 import { productsList } from "../../../data/tempData";
 import Image from "next/image";
 import styles from "../../../styles/ProductPage.module.scss";
-
-// Delete this later
-import bearingFirstImg from "../../../public/imports/bearing-1.svg";
-import bearingSecondImg from "../../../public/imports/bearing-2.svg";
+import styles_items from "../../../styles/ListedItems.module.scss";
 import silverBearWithBearImg from "../../../public/imports/silverbear-with-bear.svg";
 import { IProduct } from "../../../interfaces/interfaces";
+import Suffix from "../../../components/home/Suffix";
 
 interface Props {
   product: IProduct;
@@ -60,6 +58,42 @@ const ProductDescription = ({ product }: Props) => {
               <p key={key}>{paragraph}</p>
             ))}
         </section>
+
+        {product.selfAligningGroups && (
+          <section className={styles_items.content__additional}>
+            <h2>
+              Существует 6 основных групп самоустанавливающихся подшипников
+            </h2>
+            <ul className={styles_items.suffixes__container}>
+              {product.selfAligningGroups.map((prefix: any, key: number) => (
+                <Suffix suffix={prefix} key={key} />
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {product.waysFasteningShaft && (
+          <section className={styles_items.content__additional}>
+            <h2>
+              Существует 6 основных групп самоустанавливающихся подшипников
+            </h2>
+            <ul className={styles_items.suffixes__container}>
+              {product.waysFasteningShaft.map((prefix: any, key: number) => (
+                <Suffix suffix={prefix} key={key} />
+              ))}
+            </ul>
+          </section>
+        )}
+        {product.shaftPinPairs && (
+          <section className={styles_items.content__additional}>
+            <h2>Наиболее часто применяемые пары вал-штифт</h2>
+            <ul className={styles_items.suffixes__container}>
+              {product.shaftPinPairs.map((prefix: any, key: number) => (
+                <Suffix suffix={prefix} key={key} />
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Change this later */}
         <Image

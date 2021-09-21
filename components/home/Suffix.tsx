@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import suffixArrowShow from "./../../public/imports/suffix-arrow-show.svg";
 import suffixArrowHide from "./../../public/imports/suffix-arrow-hide.svg";
+import moreIcon from "./../../public/imports/icons/more-icon.svg";
 import Image from "next/image";
-import styles from "./../../styles/Marking.module.scss";
+import styles from "./../../styles/ListedItems.module.scss";
 
 interface Props {
   suffix: {
@@ -38,10 +39,10 @@ const Suffix: React.FC<Props> = ({ suffix }) => {
                 ? styles.rotate__arrow_hide
                 : styles.rotate__arrow_show)
             }
-            src={suffixArrowShow}
+            src={moreIcon}
             alt="suffix-arrow-show"
-            width={18}
-            height={18}
+            width={30}
+            height={30}
           />
         </button>
       </div>

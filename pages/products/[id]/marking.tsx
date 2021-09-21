@@ -5,6 +5,7 @@ import Footer from "../../../components/footer/Footer";
 import { productsList } from "../../../data/tempData";
 import Image from "next/image";
 import styles from "../../../styles/Marking.module.scss";
+import styles_items from "../../../styles/ListedItems.module.scss";
 
 // Delete this later
 import bearingFirstImg from "../../../public/imports/bearing-1.svg";
@@ -33,26 +34,36 @@ const ProductMarking = ({ product }: Props) => {
         <section className={styles.content__marking_system}>
           <h2>Система маркировки шарикоподшипников</h2>
           <h4>Суффиксы</h4>
-          <ul className={styles.suffixes__container}>
+          <ul className={styles_items.suffixes__container}>
             {product.marking?.suffixes?.map((suffix: any, key: number) => (
               <Suffix suffix={suffix} key={key} />
             ))}
           </ul>
         </section>
         {product.marking?.prefixes && (
-          <section className={styles.content__additional}>
+          <section className={styles_items.content__additional}>
             <h2>Префиксы</h2>
-            <ul className={styles.suffixes__container}>
+            <ul className={styles_items.suffixes__container}>
               {product.marking?.prefixes?.map((prefix: any, key: number) => (
                 <Suffix suffix={prefix} key={key} />
               ))}
             </ul>
           </section>
         )}
+        {product.marking?.indexes && (
+          <section className={styles_items.content__additional}>
+            <h2>Префиксы</h2>
+            <ul className={styles_items.suffixes__container}>
+              {product.marking?.indexes?.map((prefix: any, key: number) => (
+                <Suffix suffix={prefix} key={key} />
+              ))}
+            </ul>
+          </section>
+        )}
         {product.marking?.radialClearances && (
-          <section className={styles.content__additional}>
+          <section className={styles_items.content__additional}>
             <h2>Радиальные зазоры</h2>
-            <ul className={styles.suffixes__container}>
+            <ul className={styles_items.suffixes__container}>
               {product.marking?.radialClearances?.map(
                 (prefix: any, key: number) => (
                   <Suffix suffix={prefix} key={key} />
@@ -62,9 +73,9 @@ const ProductMarking = ({ product }: Props) => {
           </section>
         )}
         {product.marking?.axialClearances && (
-          <section className={styles.content__additional}>
+          <section className={styles_items.content__additional}>
             <h2>Осевые зазоры</h2>
-            <ul className={styles.suffixes__container}>
+            <ul className={styles_items.suffixes__container}>
               {product.marking?.axialClearances?.map(
                 (prefix: any, key: number) => (
                   <Suffix suffix={prefix} key={key} />
@@ -75,9 +86,9 @@ const ProductMarking = ({ product }: Props) => {
         )}
 
         {product.marking?.accuracyClasses && (
-          <section className={styles.content__additional}>
+          <section className={styles_items.content__additional}>
             <h2>Классы точности</h2>
-            <ul className={styles.suffixes__container}>
+            <ul className={styles_items.suffixes__container}>
               {product.marking?.accuracyClasses?.map(
                 (prefix: any, key: number) => (
                   <Suffix suffix={prefix} key={key} />
